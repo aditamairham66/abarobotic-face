@@ -1,6 +1,4 @@
-setInterval(() => {
-  window.location.reload();
-}, 3000); // Refresh every 3 seconds
+import './echo';
 
 function updateClock() {
   const now = new Date();
@@ -13,3 +11,28 @@ function updateClock() {
 
 setInterval(updateClock, 1000); // Update clock every second
 updateClock(); // Initial call to display clock immediately
+
+const faceStatus = document.querySelector('.faceStatus');
+const faceScore = document.querySelector('.faceScore');
+const imgSelfi = document.querySelector('.imgSelfi');
+const imgPassport = document.querySelector('.imgPassport');
+
+window.Echo.channel('T5CloudService-Channel')
+  .listen('.T5CloudService-Handle', function (e) {
+      // Use console.log instead of alert for debugging
+      console.log(e);
+
+      // Update faceStatus element
+      faceStatus.innerHTML = `
+        <span class="${e.faceStatus === 'GOOD' ? 'text-green-500' : 'text-red-500'}">
+          ${e.faceStatus}
+        </span>
+      `;
+
+      // Update faceScore element
+      faceScore.innerText = `Face Score : ${e.faceScore}`;
+
+      // Update image sources
+      imgSelfi.src = `data:image/jpeg;base64,${e.selfi}`;
+      imgPassport.src = `data:image/jpeg;base64,${e.passport}`;
+  });

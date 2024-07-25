@@ -42,23 +42,21 @@
   <main class="flex flex-col items-center justify-center">
     <div class="container mx-auto p-4">
       <!-- Status Text -->
-      <h2 class="text-center text-3xl font-bold mb-1">
-        <span class="{{ $status == 'GOOD' ? 'text-green-500' : 'text-red-500' }}">
-          {{ $status }}
-        </span>
+      <h2 class="text-center text-3xl font-bold mb-1 faceStatus">
+        <span class="text-black">EMPTY</span>
       </h2>
-      <h2 class="text-center text-xl font-bold mb-5">Face Score : {{ $faceScore }}</h2>
+      <h2 class="text-center text-xl font-bold mb-5 faceScore">Face Score : 0</h2>
 
       <!-- Images and Status Grid -->
       <div class="grid md:grid-cols-2 gap-4">
         <!-- Image 1 -->
         <div class="bg-white p-4 shadow rounded flex flex-col justify-center">
-          <img src="{{ "data:image/jpeg;base64,".$face->img_face }}" alt="Face Image" class="object-contain h-[500px] mb-4">
+          <img src="https://via.placeholder.com/500x500" alt="Face Image" class="object-contain h-[500px] mb-4 imgSelfi">
           <h2 class="text-center text-xl font-bold">FACE</h2>
         </div>
         <!-- Image 2 -->
         <div class="bg-white p-4 shadow rounded flex flex-col justify-center">
-          <img src="{{ "data:image/jpeg;base64,".$face->img_passport }}" alt="Passport Image" class="object-contain h-[500px] mb-4">
+          <img src="https://via.placeholder.com/500x500" alt="Passport Image" class="object-contain h-[500px] mb-4 imgPassport">
           <h2 class="text-center text-xl font-bold">PASSPORT</h2>
         </div>
       </div>
