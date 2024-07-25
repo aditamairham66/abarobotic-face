@@ -3,20 +3,22 @@
 - MYSQL 5.7
 - NODE 16.19.1
 
+- [UPDATE TAG PROJECT](./init-project/tag-git.md)
+
 Berikut adalah langkah-langkah tambahan untuk menginstal Laravel Echo Server yang ada di project
 
 #### Install Redis
 
 Untuk menggunakan Laravel Echo Server, Anda perlu menginstal Redis terlebih dahulu. Pilih salah satu dari dua panduan berikut sesuai dengan sistem operasi yang Anda gunakan:
 
-- [Install Redis di Linux](./install-redis-linux.md)
-- [Install Redis di Windows](./install-redis-windows.md)
+- [Install Redis di Linux](./init-project/install-redis-linux.md)
+- [Install Redis di Windows](./init-project/install-redis-windows.md)
 
 #### Setting Laravel Echo Server
 
 Setelah Redis terinstal, Anda perlu melakukan konfigurasi Laravel Echo Server. Ikuti panduan berikut:
 
-- [Setting Laravel Echo Server](./setting-1-laravel-echo.md)
+- [Setting Laravel Echo Server](./init-project/setting-1-laravel-echo.md)
 
 #### Running Queue
 
@@ -28,7 +30,7 @@ php artisan queue:listen redis --queue="T5CloudService"
 
 Anda bisa melihat panduan detail pada file berikut:
 
-- [Setting Queue Listener](./setting-2-queue-listen.md)
+- [Setting Queue Listener](./init-project/setting-2-queue-listen.md)
 
 ## Instalasi
 #### 1. Clone Repository
