@@ -19,7 +19,7 @@ class FaceController extends Controller
     {
         $face = $this->face->isActive()->first();
         if (!$face) {
-            return abort("No data");
+            return abort(403, "Tidak ada scan wajah.");
         };
         
         $this->cloudService = new ApiT5CloudService(
