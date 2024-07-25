@@ -17,14 +17,14 @@ laravel-echo-server init
 ```
 #### INIT LARAVEL ECHO SERVER
 
-![screenshot](./init-project/laravel-echo1.png)
+![screenshot](laravel-echo1.png)
 
 ```bash
 laravel-echo-server start
 ```
 #### START LARAVEL ECHO SERVER
 
-![screenshot](./init-project/laravel-echo2.png)
+![screenshot](laravel-echo2.png)
 
 This will generate a `laravel-echo-server.json` configuration file. Adjust this file according to your needs.
 
