@@ -19,16 +19,23 @@ class FaceController extends Controller
     {
         $face = $this->face->isActive()->first();
         if (!$face) {
-            return abort(403, "Tidak ada scan wajah.");
-        };
+            $face = (object) [];
+            $face->img_face = 'https://via.placeholder.com/500x500';
+            $face->img_passport = 'https://via.placeholder.com/500x500';
+        }
         
         $this->cloudService = new ApiT5CloudService(
-            $face->img_face,
-            $face->img_passport
+            $face->img_face ?? '',
+            $face->img_passport ?? '',
         );
         $faceScore = $this->cloudService->getFaceScore();
         $faceStatus =  $this->cloudService->getFaceStatus($faceScore);
         
+        if ($face) {
+            $face->img_face = $face->img_face ? "data:image/jpeg;base64,$face->img_face" : '';
+            $face->img_passport = $face->img_passport ? "data:image/jpeg;base64,$face->img_passport" : '';
+        }
+
         return view('web.layout', [
             "face" => $face,
             "faceScore" => $faceScore,

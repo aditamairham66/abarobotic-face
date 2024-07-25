@@ -53,12 +53,12 @@
       <div class="grid md:grid-cols-2 gap-4">
         <!-- Image 1 -->
         <div class="bg-white p-4 shadow rounded flex flex-col justify-center">
-          <img src="{{ "data:image/jpeg;base64,".$face->img_face }}" alt="Face Image" class="object-contain h-[500px] mb-4">
+          <img src="{{ $face->img_face }}" alt="Face Image" class="object-contain h-[500px] mb-4">
           <h2 class="text-center text-xl font-bold">FACE</h2>
         </div>
         <!-- Image 2 -->
         <div class="bg-white p-4 shadow rounded flex flex-col justify-center">
-          <img src="{{ "data:image/jpeg;base64,".$face->img_passport }}" alt="Passport Image" class="object-contain h-[500px] mb-4">
+          <img src="{{ $face->img_passport }}" alt="Passport Image" class="object-contain h-[500px] mb-4">
           <h2 class="text-center text-xl font-bold">PASSPORT</h2>
         </div>
       </div>
